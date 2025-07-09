@@ -57,12 +57,21 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-b from-[#0d1117] via-[#161b22] to-[#0d1117] overflow-hidden">
-        {/* Background decorative elements */}
+      <section className="relative py-32 bg-gradient-to-b from-[#0d1117] via-[#161b22] to-[#21262d] overflow-hidden">
+        {/* GitHub-style gradient background with glowing orbs */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-1/4 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute top-40 right-1/3 w-24 h-24 bg-purple-500/20 rounded-full blur-2xl"></div>
-          <div className="absolute bottom-20 left-1/2 w-40 h-40 bg-pink-500/10 rounded-full blur-3xl"></div>
+          {/* Large gradient orbs */}
+          <div className="absolute top-20 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/30 via-purple-500/20 to-pink-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-40 right-1/3 w-80 h-80 bg-gradient-to-r from-purple-500/25 via-blue-500/15 to-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-gradient-to-r from-pink-500/20 via-purple-500/15 to-blue-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+
+          {/* Smaller floating orbs */}
+          <div className="absolute top-32 right-1/4 w-32 h-32 bg-gradient-to-r from-white/20 to-blue-300/30 rounded-full blur-2xl animate-bounce"></div>
+          <div className="absolute top-60 left-1/3 w-24 h-24 bg-gradient-to-r from-purple-300/25 to-pink-300/20 rounded-full blur-xl animate-bounce delay-500"></div>
+          <div className="absolute bottom-40 right-1/5 w-20 h-20 bg-gradient-to-r from-cyan-300/30 to-blue-300/25 rounded-full blur-xl animate-bounce delay-1000"></div>
+
+          {/* Subtle mesh gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-purple-900/5 to-pink-900/10"></div>
         </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -81,16 +90,19 @@ export default function HomePage() {
             <div className="flex-1 w-full sm:w-auto">
               <Input
                 placeholder="Enter your email"
-                className="bg-[#21262d] border-gray-600 text-white placeholder-gray-400 h-12 text-lg"
+                className="bg-[#21262d] border-gray-600 text-white placeholder-gray-400 h-12 text-lg backdrop-blur-sm"
               />
             </div>
-            <Button size="lg" className="bg-[#238636] hover:bg-[#2ea043] text-white h-12 px-8 whitespace-nowrap">
+            <Button
+              size="lg"
+              className="bg-[#238636] hover:bg-[#2ea043] text-white h-12 px-8 whitespace-nowrap shadow-lg shadow-green-500/25"
+            >
               Get Your Custom ROI Report
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-gray-600 text-white hover:bg-gray-800 h-12 px-8 bg-transparent"
+              className="border-gray-600 text-white hover:bg-gray-800 h-12 px-8 bg-transparent backdrop-blur-sm"
             >
               See Live Demo
             </Button>
@@ -114,15 +126,21 @@ export default function HomePage() {
       </section>
 
       {/* For Marketing Agencies */}
-      <section id="agencies" className="py-20 bg-[#0d1117]">
-        <div className="container mx-auto px-4">
+      <section id="agencies" className="py-20 relative overflow-hidden">
+        {/* Gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0d1117] via-[#161b22] to-[#0d1117]">
+          <div className="absolute top-20 right-1/4 w-64 h-64 bg-gradient-to-r from-blue-500/15 to-purple-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-1/4 w-48 h-48 bg-gradient-to-r from-purple-500/10 to-pink-500/5 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">For Marketing Agencies</h2>
             <p className="text-xl text-gray-300">Production Capacity That Makes Every Retainer More Profitable</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 mb-16">
-            <div className="bg-[#161b22] p-8 rounded-lg border border-gray-800">
+            <div className="bg-[#161b22]/80 backdrop-blur-sm p-8 rounded-lg border border-gray-800/50">
               <h3 className="text-2xl font-bold mb-6 text-red-400">The Agency Reality Check</h3>
               <div className="space-y-4 text-gray-300">
                 <p>Your strategists spend 40% of their time managing freelancers instead of growing accounts.</p>
@@ -133,7 +151,7 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-            <div className="bg-[#161b22] p-8 rounded-lg border border-gray-800">
+            <div className="bg-[#161b22]/80 backdrop-blur-sm p-8 rounded-lg border border-gray-800/50">
               <h3 className="text-2xl font-bold mb-6 text-green-400">The Marketing Visionary Advantage</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -168,7 +186,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <Card className="mb-12 bg-[#161b22] border-gray-800">
+          <Card className="mb-12 bg-[#161b22]/80 backdrop-blur-sm border-gray-800/50">
             <CardHeader>
               <CardTitle className="text-center text-white text-2xl">Real Agency Results</CardTitle>
             </CardHeader>
@@ -203,7 +221,7 @@ export default function HomePage() {
           </Card>
 
           <div className="text-center">
-            <Button size="lg" className="bg-[#238636] hover:bg-[#2ea043] text-white">
+            <Button size="lg" className="bg-[#238636] hover:bg-[#2ea043] text-white shadow-lg shadow-green-500/25">
               Calculate Your Agency's Savings
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -212,15 +230,21 @@ export default function HomePage() {
       </section>
 
       {/* For Brands */}
-      <section id="brands" className="py-20 bg-[#161b22]">
-        <div className="container mx-auto px-4">
+      <section id="brands" className="py-20 relative overflow-hidden">
+        {/* Gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-bl from-[#161b22] via-[#21262d] to-[#161b22]">
+          <div className="absolute top-20 left-1/4 w-72 h-72 bg-gradient-to-r from-purple-500/15 to-blue-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-1/4 w-56 h-56 bg-gradient-to-r from-pink-500/10 to-purple-500/5 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">For Brands</h2>
             <p className="text-xl text-gray-300">Enterprise Marketing Power Without the Enterprise Overhead</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 mb-16">
-            <div className="bg-[#0d1117] p-8 rounded-lg border border-gray-800">
+            <div className="bg-[#0d1117]/80 backdrop-blur-sm p-8 rounded-lg border border-gray-800/50">
               <h3 className="text-2xl font-bold mb-6 text-red-400">The Brand Challenge</h3>
               <div className="space-y-4 text-gray-300">
                 <p>You need a full marketing department's output, but hiring 10 specialists costs $1.5M+ annually.</p>
@@ -228,7 +252,7 @@ export default function HomePage() {
                 <p>Meanwhile, your competitors launch campaigns in days while you're still in planning meetings.</p>
               </div>
             </div>
-            <div className="bg-[#0d1117] p-8 rounded-lg border border-gray-800">
+            <div className="bg-[#0d1117]/80 backdrop-blur-sm p-8 rounded-lg border border-gray-800/50">
               <h3 className="text-2xl font-bold mb-6 text-green-400">The Marketing Visionary Solution</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -263,7 +287,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <Card className="mb-12 bg-[#161b22] border-gray-800">
+          <Card className="mb-12 bg-[#161b22]/80 backdrop-blur-sm border-gray-800/50">
             <CardHeader>
               <CardTitle className="text-center text-white text-2xl">Proven Brand Impact</CardTitle>
             </CardHeader>
@@ -290,7 +314,7 @@ export default function HomePage() {
           </Card>
 
           <div className="text-center">
-            <Button size="lg" className="bg-[#238636] hover:bg-[#2ea043] text-white">
+            <Button size="lg" className="bg-[#238636] hover:bg-[#2ea043] text-white shadow-lg shadow-green-500/25">
               See Your Brand's Potential
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -299,14 +323,20 @@ export default function HomePage() {
       </section>
 
       {/* What We Deliver */}
-      <section className="py-20 bg-[#0d1117]">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative overflow-hidden">
+        {/* Gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#0d1117] via-[#161b22] to-[#0d1117]">
+          <div className="absolute top-20 right-1/3 w-80 h-80 bg-gradient-to-r from-cyan-500/10 to-blue-500/15 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-1/3 w-64 h-64 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">What Marketing Visionary Delivers</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-[#161b22] p-8 rounded-lg border border-gray-800">
+            <div className="bg-[#161b22]/80 backdrop-blur-sm p-8 rounded-lg border border-gray-800/50">
               <h3 className="text-2xl font-bold mb-8 text-green-400">Available Today</h3>
               <div className="space-y-6">
                 <div className="flex items-start gap-3">
@@ -339,7 +369,7 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="bg-[#161b22] p-8 rounded-lg border border-gray-800">
+            <div className="bg-[#161b22]/80 backdrop-blur-sm p-8 rounded-lg border border-gray-800/50">
               <h3 className="text-2xl font-bold mb-8 text-blue-400">Coming Q2 2025</h3>
               <div className="space-y-6">
                 <div className="flex items-start gap-3">
@@ -373,15 +403,21 @@ export default function HomePage() {
       </section>
 
       {/* Differentiators */}
-      <section className="py-20 bg-[#161b22]">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative overflow-hidden">
+        {/* Gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-bl from-[#161b22] via-[#21262d] to-[#161b22]">
+          <div className="absolute top-20 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-pink-500/15 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-1/4 w-72 h-72 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">The Marketing Visionary Difference</h2>
             <p className="text-xl text-gray-300">Not Just Another AI Tool</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-[#0d1117] border-gray-800">
+            <Card className="bg-[#0d1117]/80 backdrop-blur-sm border-gray-800/50">
               <CardHeader>
                 <Shield className="h-8 w-8 text-blue-400 mb-2" />
                 <CardTitle className="text-white">Enterprise-Grade Security</CardTitle>
@@ -396,7 +432,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-[#0d1117] border-gray-800">
+            <Card className="bg-[#0d1117]/80 backdrop-blur-sm border-gray-800/50">
               <CardHeader>
                 <Users className="h-8 w-8 text-purple-400 mb-2" />
                 <CardTitle className="text-white">Human + AI Partnership</CardTitle>
@@ -411,7 +447,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-[#0d1117] border-gray-800">
+            <Card className="bg-[#0d1117]/80 backdrop-blur-sm border-gray-800/50">
               <CardHeader>
                 <TrendingUp className="h-8 w-8 text-green-400 mb-2" />
                 <CardTitle className="text-white">Measurable Business Impact</CardTitle>
@@ -430,14 +466,20 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-[#0d1117]">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative overflow-hidden">
+        {/* Gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#0d1117] via-[#161b22] to-[#0d1117]">
+          <div className="absolute top-20 right-1/4 w-64 h-64 bg-gradient-to-r from-green-500/10 to-blue-500/15 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-1/4 w-48 h-48 bg-gradient-to-r from-purple-500/10 to-pink-500/5 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Success Stories</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-[#161b22] border-gray-800">
+            <Card className="bg-[#161b22]/80 backdrop-blur-sm border-gray-800/50">
               <CardContent className="pt-6">
                 <p className="text-gray-300 mb-4">
                   "We replaced 3 freelance writers and an SEO consultant. Now we produce 10x more content at 80% less
@@ -455,7 +497,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-[#161b22] border-gray-800">
+            <Card className="bg-[#161b22]/80 backdrop-blur-sm border-gray-800/50">
               <CardContent className="pt-6">
                 <p className="text-gray-300 mb-4">
                   "Marketing Visionary let us say yes to every client request. Our capacity went up 40% and margins
@@ -473,7 +515,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-[#161b22] border-gray-800">
+            <Card className="bg-[#161b22]/80 backdrop-blur-sm border-gray-800/50">
               <CardContent className="pt-6">
                 <p className="text-gray-300 mb-4">
                   "5-day campaign launches used to be impossible. Now they're standard. Our clients think we hired 20
@@ -495,8 +537,14 @@ export default function HomePage() {
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="py-20 bg-[#161b22]">
-        <div className="container mx-auto px-4">
+      <section id="pricing" className="py-20 relative overflow-hidden">
+        {/* Gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-bl from-[#161b22] via-[#21262d] to-[#161b22]">
+          <div className="absolute top-20 left-1/3 w-80 h-80 bg-gradient-to-r from-blue-500/15 to-purple-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-1/3 w-64 h-64 bg-gradient-to-r from-purple-500/10 to-pink-500/5 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Pricing That Makes Sense</h2>
           </div>
@@ -505,19 +553,19 @@ export default function HomePage() {
             <div>
               <h3 className="text-2xl font-bold mb-8 text-blue-400">For Agencies</h3>
               <div className="space-y-4">
-                <Card className="bg-[#0d1117] border-gray-800">
+                <Card className="bg-[#0d1117]/80 backdrop-blur-sm border-gray-800/50">
                   <CardHeader>
                     <CardTitle className="text-white">Growth Plan</CardTitle>
                     <CardDescription className="text-gray-400">Perfect for 10-50 clients</CardDescription>
                   </CardHeader>
                 </Card>
-                <Card className="bg-[#0d1117] border-gray-800">
+                <Card className="bg-[#0d1117]/80 backdrop-blur-sm border-gray-800/50">
                   <CardHeader>
                     <CardTitle className="text-white">Scale Plan</CardTitle>
                     <CardDescription className="text-gray-400">Unlimited capacity for larger shops</CardDescription>
                   </CardHeader>
                 </Card>
-                <Card className="bg-[#0d1117] border-gray-800">
+                <Card className="bg-[#0d1117]/80 backdrop-blur-sm border-gray-800/50">
                   <CardHeader>
                     <CardTitle className="text-white">White Label</CardTitle>
                     <CardDescription className="text-gray-400">Your brand, our engine</CardDescription>
@@ -528,19 +576,19 @@ export default function HomePage() {
             <div>
               <h3 className="text-2xl font-bold mb-8 text-purple-400">For Brands</h3>
               <div className="space-y-4">
-                <Card className="bg-[#0d1117] border-gray-800">
+                <Card className="bg-[#0d1117]/80 backdrop-blur-sm border-gray-800/50">
                   <CardHeader>
                     <CardTitle className="text-white">Department Plan</CardTitle>
                     <CardDescription className="text-gray-400">Replace 3-5 freelancers</CardDescription>
                   </CardHeader>
                 </Card>
-                <Card className="bg-[#0d1117] border-gray-800">
+                <Card className="bg-[#0d1117]/80 backdrop-blur-sm border-gray-800/50">
                   <CardHeader>
                     <CardTitle className="text-white">Enterprise Plan</CardTitle>
                     <CardDescription className="text-gray-400">Full marketing capabilities</CardDescription>
                   </CardHeader>
                 </Card>
-                <Card className="bg-[#0d1117] border-gray-800">
+                <Card className="bg-[#0d1117]/80 backdrop-blur-sm border-gray-800/50">
                   <CardHeader>
                     <CardTitle className="text-white">Custom Solutions</CardTitle>
                     <CardDescription className="text-gray-400">Tailored to your needs</CardDescription>
@@ -554,7 +602,7 @@ export default function HomePage() {
             <p className="text-gray-400 mb-6">
               All plans include: Onboarding, training, dedicated success manager, API access
             </p>
-            <Button size="lg" className="bg-[#238636] hover:bg-[#2ea043] text-white">
+            <Button size="lg" className="bg-[#238636] hover:bg-[#2ea043] text-white shadow-lg shadow-green-500/25">
               Get Pricing Details
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -563,13 +611,19 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-20 relative overflow-hidden">
+        {/* Enhanced gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+          <div className="absolute top-20 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-2xl animate-pulse delay-1000"></div>
+        </div>
+
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Ready to Transform Your Marketing?</h2>
           <p className="text-xl mb-12 opacity-90">See Marketing Visionary in Action</p>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="bg-white/10 border-white/20 text-white backdrop-blur">
+            <Card className="bg-white/10 border-white/20 text-white backdrop-blur-lg">
               <CardHeader>
                 <CardTitle className="text-white">Agencies</CardTitle>
                 <CardDescription className="text-white/80">
@@ -577,14 +631,14 @@ export default function HomePage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full bg-white text-black hover:bg-gray-100">
+                <Button className="w-full bg-white text-black hover:bg-gray-100 shadow-lg">
                   Book Agency Demo
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="bg-white/10 border-white/20 text-white backdrop-blur">
+            <Card className="bg-white/10 border-white/20 text-white backdrop-blur-lg">
               <CardHeader>
                 <CardTitle className="text-white">Brands</CardTitle>
                 <CardDescription className="text-white/80">
@@ -592,7 +646,7 @@ export default function HomePage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full bg-white text-black hover:bg-gray-100">
+                <Button className="w-full bg-white text-black hover:bg-gray-100 shadow-lg">
                   Schedule Executive Briefing
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -607,7 +661,7 @@ export default function HomePage() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-black bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-black bg-transparent backdrop-blur-sm shadow-lg"
             >
               Talk to Sales
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -617,8 +671,14 @@ export default function HomePage() {
       </section>
 
       {/* Bottom Line */}
-      <section className="py-20 bg-[#0d1117]">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-20 relative overflow-hidden">
+        {/* Gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#0d1117] via-[#161b22] to-[#0d1117]">
+          <div className="absolute top-20 right-1/4 w-72 h-72 bg-gradient-to-r from-blue-500/10 to-purple-500/15 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-1/4 w-56 h-56 bg-gradient-to-r from-purple-500/10 to-pink-500/5 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Bottom Line</h2>
           <div className="max-w-3xl mx-auto space-y-4 text-lg mb-12 text-gray-300">
             <p>Stop managing freelancers. Stop waiting weeks for content. Stop compromising on quality for speed.</p>
@@ -628,7 +688,7 @@ export default function HomePage() {
             </p>
             <p className="text-xl font-semibold text-white">The future of marketing is here. Are you ready?</p>
           </div>
-          <Button size="lg" className="bg-[#238636] hover:bg-[#2ea043] text-white">
+          <Button size="lg" className="bg-[#238636] hover:bg-[#2ea043] text-white shadow-lg shadow-green-500/25">
             Start Your Transformation
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
@@ -636,8 +696,13 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#161b22] py-12 border-t border-gray-800">
-        <div className="container mx-auto px-4">
+      <footer className="bg-[#161b22] py-12 border-t border-gray-800 relative overflow-hidden">
+        {/* Subtle gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#161b22] via-[#21262d] to-[#161b22]">
+          <div className="absolute top-0 left-1/2 w-64 h-32 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <img src="/logo-final.png" alt="Marketing Visionary" className="h-12 object-contain" />
